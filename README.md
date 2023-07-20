@@ -1,3 +1,3 @@
-# clone-tabnews
+# CineTalks
 
-Implementando um projeto de grande escala do zero
+Implementando um projeto de grande escala do zero(tabnews)
