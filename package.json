@@ -4,7 +4,7 @@
   "description": "Implementando um projeto de grande escala do zero",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & docker compose -f infra/compose.yaml up -d & psql --host=localhost --username=postgres --port=5432",
     "lint-check": "prettier --check .",
     "lint-fix": "prettier --write .",
     "test": "jest",
