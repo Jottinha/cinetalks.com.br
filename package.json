@@ -4,7 +4,9 @@
   "description": "Implementando um projeto de grande escala do zero",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev & docker compose -f infra/compose.yaml up -d & psql --host=localhost --username=postgres --port=5432",
+    "dev": "next dev",
+    "dev:docker": "docker compose -f infra/compose.yaml up --no-recreate -d",
+    "local-data": "psql --host=localhost --username=postgres --port=5432",
     "lint-check": "prettier --check .",
     "lint-fix": "prettier --write .",
     "test": "jest",
@@ -13,6 +15,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@swc/helpers": "^0.5.3",
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
