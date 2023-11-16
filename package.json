@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "dev:docker": "docker compose -f infra/compose.yaml up --no-recreate -d",
-    "local-data": "psql --host=localhost --username=postgres --port=5432",
+    "dev-docker": "docker compose -f infra/compose.yaml up --no-recreate -d",
+    "dev-data": "sleep 10 && psql --host=localhost --username=postgres --port=5432",
+    "dev-teste": "npm run dev-docker && npm run dev-data",
     "lint-check": "prettier --check .",
     "lint-fix": "prettier --write .",
     "test": "jest",
