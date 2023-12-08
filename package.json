@@ -4,10 +4,10 @@
   "description": "Implementando um projeto de grande escala do zero",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run dev-docker && sleep 5 && next dev",
     "dev-docker": "docker compose -f infra/compose.yaml up --no-recreate -d",
-    "dev-data": "sleep 10 && psql --host=localhost --username=postgres --port=5432",
-    "dev-teste": "npm run dev-docker && npm run dev-data",
+    "dev-data": "sleep 10 && psql -h localhost -p 5432 -U local_postgres -W -d local_db",
+    "dev-docker-data": "npm run dev-docker && npm run dev-data",
     "lint-check": "prettier --check .",
     "lint-fix": "prettier --write .",
     "test": "jest",
